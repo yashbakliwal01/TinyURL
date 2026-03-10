@@ -36,9 +36,4 @@ public class UrlEntity {
 	
 	private Long clickCount;
 	
-//	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-//	private LocalDateTime expiryDate;
-	
-//	private boolean isActive;
-	
 }
