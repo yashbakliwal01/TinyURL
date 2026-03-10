@@ -11,12 +11,10 @@ public class Base62Encoder {
 	private static final Random RANDOM = new Random();
 	
 	public String encode(Long value) {
-		
 		StringBuilder sb = new StringBuilder();
 		if(value==0) return "a";
 		while (value > 0) {
 			int remainder = (int)(value % 62);
-			
 			sb.append(BASE62.charAt(remainder));
 			value /= 62;
 		}
@@ -25,7 +23,7 @@ public class Base62Encoder {
 	
 	public String generateRandomCode() {
 	    StringBuilder sb = new StringBuilder();
-	    for(int i=0; i<6; i++) {
+	    for(int i=0; i<5; i++) {
 	        int index = RANDOM.nextInt(BASE62.length());
 	        sb.append(BASE62.charAt(index));
 	    }
