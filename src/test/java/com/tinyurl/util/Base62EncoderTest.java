@@ -10,7 +10,6 @@ public class Base62EncoderTest {
 	@Test
 	public void testEncode() {
 		String encoded = encoder.encode(12345L);
-		assert(encoded != null && !encoded.isEmpty());
 		Assertions.assertTrue(encoded.length()>0);
 	}
 	

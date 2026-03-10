@@ -2,9 +2,12 @@ package com.tinyurl.cache;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.tinyurl.entity.UrlEntity;
 
+@ExtendWith(MockitoExtension.class)
 public class LRUCacheManagerTest {
 	
 	@Test
