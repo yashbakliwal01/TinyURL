@@ -13,7 +13,4 @@ public class UrlRequest {
 	@NotBlank(message = "Long URL cannot be empty")
 	private String longUrl;
 	
-//	private String customAlias;
-//	
-//	private LocalDateTime expiryDate;
 }
