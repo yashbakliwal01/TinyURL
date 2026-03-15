@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: tinyurl-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: yash@123
+      MYSQL_DATABASE: tinyurl_db
+    ports:
+      - "3307:3306"
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      retries: 10
+      timeout: 5s
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  tinyurl-app:
+    build: .
+    container_name: tinyurl-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql-data:
