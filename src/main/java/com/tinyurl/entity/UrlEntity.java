@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -36,4 +35,9 @@ public class UrlEntity {
 	
 	private Long clickCount;
 	
+//	 @PrePersist
+//	 public void prePersist() {
+//		 if (createdAt == null) createdAt = LocalDateTime.now();
+//		 if (clickCount == null) clickCount = 0L;
+//	 }
 }

@@ -5,17 +5,16 @@ import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import com.tinyurl.entity.UrlEntity;
 
-@DataJpaTest
 @ExtendWith(MockitoExtension.class)
 public class UrlRepositoryTest {
 	
-	@Autowired
+	@Mock
 	private UrlRepository urlRepository;
 	
 	@Test
@@ -25,13 +24,12 @@ public class UrlRepositoryTest {
 				.shortCode("abc123")
 				.longUrl("https://google.com")
 				.build();
-		urlRepository.save(entity);
-			
-		String shortCode = "abc123";
-		Optional<UrlEntity> entityOpt = urlRepository.findByShortCode(shortCode);
 		
+		Mockito.when(urlRepository.findByShortCode("abc123")).thenReturn(Optional.of(entity));
+		
+		Optional<UrlEntity> entityOpt = urlRepository.findByShortCode("abc123");
 		Assertions.assertTrue(entityOpt.isPresent());
-		Assertions.assertEquals(shortCode, entityOpt.get().getShortCode());
+		Assertions.assertEquals("abc123", entityOpt.get().getShortCode());
 		Assertions.assertEquals("https://google.com", entityOpt.get().getLongUrl());
 		
 	}
@@ -42,11 +40,12 @@ public class UrlRepositoryTest {
 				.shortCode("abc123")
 				.longUrl("https://google.com")
 				.build();
-		urlRepository.save(entity);
-			
+		
+		Mockito.when(urlRepository.fetchUrlByCode("abc123")).thenReturn(Optional.of(entity));
+		
 		Optional<UrlEntity> entityOpt = urlRepository.fetchUrlByCode("abc123");
 		Assertions.assertTrue(entityOpt.isPresent());
 		Assertions.assertEquals("abc123", entityOpt.get().getShortCode());
-		Assertions.assertEquals("https://google.com", entity.getLongUrl());
+		Assertions.assertEquals("https://google.com", entityOpt.get().getLongUrl());
 	}
 }

@@ -23,7 +23,7 @@ public class Base62Encoder {
 	
 	public String generateRandomCode() {
 	    StringBuilder sb = new StringBuilder();
-	    for(int i=0; i<5; i++) {
+	    for(int i=0; i<6; i++) {
 	        int index = RANDOM.nextInt(BASE62.length());
 	        sb.append(BASE62.charAt(index));
 	    }
