@@ -28,10 +28,15 @@ The system handles URL generation, redirection, caching, analytics tracking, and
 ## 📌 Features
 
 🔗 URL Shortening >>> Convert long URLs into short unique codes.
+
 🚀 URL Redirection >>> Accessing the short URL redirects users to the original long URL.
+
 📊 URL Information API >>> Fetch information about the shortened URL.
+
 ⚡ Unique Short Code Generation >>> Short codes generated using a **Base62 encoding approach**.
+
 🧪 Unit Testing >>> Added JUnit5 and Mockito-based unit tests for service, controller, repository, and cache logic to ensure reliability.
+
 🐳 Dockerized Deployment >>> Containerized the application using Docker and Docker Compose, running Spring Boot and MySQL in separate containers for easy deployment.
 
 ---
