@@ -15,8 +15,9 @@ The project demonstrates backend API development and URL redirection handling.
 <img src="https://img.shields.io/badge/MySQL-00618A.svg?style=for-the-badge&logo=mysql&logoColor=white"/>
 <img src="https://img.shields.io/badge/REST%20API-007396.svg?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Maven-C71A36.svg?style=for-the-badge&logo=apachemaven&logoColor=white"/>
-<!-- <img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate"/> -->
 <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+<img src="https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=java&logoColor=white"/>
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
 <img src="https://img.shields.io/badge/System%20Design-FF6F00?style=for-the-badge"/>
 
